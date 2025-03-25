@@ -33,3 +33,12 @@ new LinkExpander('.card', '.link')
 
 ```
 
+When an element has been "enhanced" with an expanded link, it gets a data-attribute that you can use from CSS;
+maybe so you're only adding the `pointer` cursor to the full element when it's _actually_ clickable:
+
+```css
+[data-expand-link="true"] {
+	cursor: pointer;
+}
+```
+
