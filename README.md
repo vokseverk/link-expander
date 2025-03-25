@@ -1,12 +1,34 @@
-# JavaScript Component Template
+# Link Expander
 
-This is a starter project for building a JavaScript component.
+A tiny module for use when you need to expand a link to take over an entire component (e.g. a Card or similar),
+but you're unable to use the ususal CSS method:
 
-The Jasmine test library comes pre-installed, so there's really no excuse for
-not having any tests :)
+```css
+.card {
+	position: relative;
+	cursor: pointer;
+}
 
-See the included `color.js` and its accompanying `ColorSpec.js` file for how to get
-started.
+.card .link::before {
+	position: absolute;
+	inset: 0;
+	content: "";
+}
 
-If you're using [Panic](https://panic.com)'s [Nova](https://nova.app) editor,
-you can hit <kbd>cmd</kbd> + <kbd>R</kbd> to run the tests.
+.card .link {
+	position: static;
+}
+```
+
+## Usage
+
+Import the module in your main JavaScript file, and create an instance, supplying a selector for the element(s)
+you want to enhance, and the selector for the link inside, e.g.:
+
+```javascript
+import LinkExpander from './path/to/link-expander.js'
+
+new LinkExpander('.card', '.link')
+
+```
+
