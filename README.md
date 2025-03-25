@@ -10,9 +10,10 @@ but you're unable to use the ususal CSS method:
 }
 
 .card .link::before {
-	position: absolute;
-	inset: 0;
 	content: "";
+	position: absolute;
+	display: block;
+	inset: 0;
 }
 
 .card .link {
